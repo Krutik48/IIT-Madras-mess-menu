@@ -1,0 +1,23 @@
+h1,h3{
+    text-align: center;
+}
+
+.form-select{
+    overflow: hidden;
+    width: auto;
+    margin: auto;
+}
+
+.opt{
+    border-radius: 7px;
+    padding: 3px;
+    padding-left:13px;
+    padding-right:13px ;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
