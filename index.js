@@ -48,7 +48,7 @@ else{
 }
 
 selector.onchange = function(){
-    if(selector.value==2){
+    if(selector.value==1){
         if(hours>=10 && hours<3){
             document.getElementById("card-title").innerText = oddmenu[day][1][0];
             document.getElementById("card-text").innerHTML = oddmenu[day][1][1];
@@ -64,20 +64,17 @@ selector.onchange = function(){
         }
     }
     else{
-        if(selector.value==1){
-            if(hours>=10 && hours<3){
-                document.getElementById("card-title").innerText = evenmenu[day][1][0];
-                document.getElementById("card-text").innerHTML = evenmenu[day][1][1];
-            }
-            else if(hours>=3 && hours<10){
-                document.getElementById("card-title").innerText = evenmenu[day][2][0];
-                document.getElementById("card-text").innerHTML = evenmenu[day][2][1];
-            }
-            else{
-                document.getElementById("card-title").innerText = evenmenu[day][0][0];
-                document.getElementById("card-text").innerHTML = evenmenu[day][0][1];
-                
-            }
+        if(hours>=10 && hours<3){
+            document.getElementById("card-title").innerText = evenmenu[day][1][0];
+            document.getElementById("card-text").innerHTML = evenmenu[day][1][1];
+        }
+        else if(hours>=3 && hours<10){
+            document.getElementById("card-title").innerText = evenmenu[day][2][0];
+            document.getElementById("card-text").innerHTML = evenmenu[day][2][1];
+        }
+        else{
+            document.getElementById("card-title").innerText = evenmenu[day][0][0];
+            document.getElementById("card-text").innerHTML = evenmenu[day][0][1];
         }
     }
 }
@@ -86,5 +83,3 @@ selector.onchange = function(){
 
 
 
-
-console.log(day);
