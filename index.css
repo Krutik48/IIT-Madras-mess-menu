@@ -1,5 +1,12 @@
-h1,h3{
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+h1,h3,h4{
     text-align: center;
+}
+#clock {
+    color: #fe4d17;
+    font-family: Orbitron;
+    letter-spacing: 7px;
 }
 
 .form-select{
