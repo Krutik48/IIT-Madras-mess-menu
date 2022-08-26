@@ -2,6 +2,38 @@ var today = new Date();
 var hours = today.getHours();
 var day = today.getDay();
 var selector = document.getElementById("selector");
+var weekday=new Array();
+weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+function showTime(){
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    var time = h + ":" + m + ":" + s + " " + session;
+    document.getElementById("clock").innerText = time;
+    document.getElementById("clock").textContent = time;
+    setTimeout(showTime, 1000);
+    
+}
+
+document.getElementById("dayShow").innerText = weekday[day] + " Menu";
+showTime();
 
 if(hours>=5 && hours<12){
     document.getElementById("greeting").innerText = "Hello, Good Morning";
@@ -34,18 +66,24 @@ const evenmenu = [[["Breakfast-Time","<li>Brown & White Bread<li>Pineapple Jam<l
 
 
 if(hours>=10 && hours<15){
-    document.getElementById("card-title").innerText = oddmenu[day][1][0];
+    document.getElementById("card-title").innerText = "It is " + oddmenu[day][1][0];
     document.getElementById("card-text").innerHTML = oddmenu[day][1][1];
 }
 else if(hours>=15 && hours<22){
-    document.getElementById("card-title").innerText = oddmenu[day][2][0];
+    document.getElementById("card-title").innerText = "It is " + oddmenu[day][2][0];
     document.getElementById("card-text").innerHTML = oddmenu[day][2][1];
 }
 else{
-    document.getElementById("card-title").innerText = oddmenu[day][0][0];
+    document.getElementById("card-title").innerText ="It is "+ oddmenu[day][0][0];
     document.getElementById("card-text").innerHTML = oddmenu[day][0][1];
     
 }
+document.getElementById("card-title-1").innerText = oddmenu[day][0][0];
+document.getElementById("card-text-1").innerHTML = oddmenu[day][0][1];        
+document.getElementById("card-title-2").innerText = oddmenu[day][1][0];
+document.getElementById("card-text-2").innerHTML = oddmenu[day][1][1];
+document.getElementById("card-title-3").innerText = oddmenu[day][2][0];
+document.getElementById("card-text-3").innerHTML = oddmenu[day][2][1];
 
 selector.onchange = function(){
     if(selector.value==1){
@@ -59,9 +97,14 @@ selector.onchange = function(){
         }
         else{
             document.getElementById("card-title").innerText = oddmenu[day][0][0];
-            document.getElementById("card-text").innerHTML = oddmenu[day][0][1];
-            
+            document.getElementById("card-text").innerHTML = oddmenu[day][0][1];        
         }
+        document.getElementById("card-title-1").innerText = oddmenu[day][0][0];
+        document.getElementById("card-text-1").innerHTML = oddmenu[day][0][1];        
+        document.getElementById("card-title-2").innerText = oddmenu[day][1][0];
+        document.getElementById("card-text-2").innerHTML = oddmenu[day][1][1];
+        document.getElementById("card-title-3").innerText = oddmenu[day][2][0];
+        document.getElementById("card-text-3").innerHTML = oddmenu[day][2][1];
     }
     else{
         if(hours>=10 && hours<15){
@@ -76,6 +119,12 @@ selector.onchange = function(){
             document.getElementById("card-title").innerText = evenmenu[day][0][0];
             document.getElementById("card-text").innerHTML = evenmenu[day][0][1];
         }
+        document.getElementById("card-title-1").innerText = evenmenu[day][0][0];
+        document.getElementById("card-text-1").innerHTML = evenmenu[day][0][1];        
+        document.getElementById("card-title-2").innerText = evenmenu[day][1][0];
+        document.getElementById("card-text-2").innerHTML = evenmenu[day][1][1];
+        document.getElementById("card-title-3").innerText = evenmenu[day][2][0];
+        document.getElementById("card-text-3").innerHTML = evenmenu[day][2][1];
     }
 }
                     
