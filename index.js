@@ -6,10 +6,10 @@ var selector = document.getElementById("selector");
 if(hours>=5 && hours<12){
     document.getElementById("greeting").innerText = "Hello, Good Morning";
 }
-else if(hours>=12 && hours<4){
+else if(hours>=12 && hours<16){
     document.getElementById("greeting").innerText = "Hello, Good Afternoon";
 }
-else if(hours>=4 && hours<6){
+else if(hours>=16 && hours<18){
     document.getElementById("greeting").innerText = "Hello, Good Evening";
 }
 else{
@@ -33,11 +33,11 @@ const evenmenu = [[["Breakfast-Time","<li>Brown & White Bread<li>Pineapple Jam<l
                     [["Breakfast-Time","<li>Mixed Sprouts<li>Poori<li>Chole"],["Lunch-Time","<li>Moong Dal Khichdi<li>Phulka<li>Aloo Chokha (Musturd Oil)<li>Red Pumpkin black Chana<li>Curd<li>Papad<li>Salad<li>Pickle"],["Night-Time","<li>Plain Rice<li>Phulka<li>Palak Dal<li>Tava Mix Veg Dry<li>Papad<li>Salad<li>Lemon Pickle<li>Banana+Bournvita Milk"]]];
 
 
-if(hours>=10 && hours<3){
+if(hours>=10 && hours<15){
     document.getElementById("card-title").innerText = oddmenu[day][1][0];
     document.getElementById("card-text").innerHTML = oddmenu[day][1][1];
 }
-else if(hours>=3 && hours<10){
+else if(hours>=15 && hours<22){
     document.getElementById("card-title").innerText = oddmenu[day][2][0];
     document.getElementById("card-text").innerHTML = oddmenu[day][2][1];
 }
@@ -49,11 +49,11 @@ else{
 
 selector.onchange = function(){
     if(selector.value==1){
-        if(hours>=10 && hours<3){
+        if(hours>=10 && hours<15){
             document.getElementById("card-title").innerText = oddmenu[day][1][0];
             document.getElementById("card-text").innerHTML = oddmenu[day][1][1];
         }
-        else if(hours>=3 && hours<10){
+        else if(hours>=15 && hours<22){
             document.getElementById("card-title").innerText = oddmenu[day][2][0];
             document.getElementById("card-text").innerHTML = oddmenu[day][2][1];
         }
@@ -64,11 +64,11 @@ selector.onchange = function(){
         }
     }
     else{
-        if(hours>=10 && hours<3){
+        if(hours>=10 && hours<15){
             document.getElementById("card-title").innerText = evenmenu[day][1][0];
             document.getElementById("card-text").innerHTML = evenmenu[day][1][1];
         }
-        else if(hours>=3 && hours<10){
+        else if(hours>=15 && hours<22){
             document.getElementById("card-title").innerText = evenmenu[day][2][0];
             document.getElementById("card-text").innerHTML = evenmenu[day][2][1];
         }
@@ -79,6 +79,7 @@ selector.onchange = function(){
     }
 }
                     
+
 
 
 
