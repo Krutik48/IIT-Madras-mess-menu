@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-h1,h3,h4,p{
+h1,h3,h4{
+    text-align: center;
+}
+#feedback{
     text-align: center;
 }
 #clock {
